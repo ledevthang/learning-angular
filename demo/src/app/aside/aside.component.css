@@ -1,0 +1,27 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Monospace;
+}
+aside {
+  margin-top: 10px;
+}
+.step {
+  padding:10px;
+  overflow: hidden;
+}
+p {
+  background: lightgreen;
+  width:100%;
+  text-align: center;
+  border: 1px solid #000;
+}
+img {
+  width: 80%;
+  display: block;
+  margin: auto;
+  filter: grayscale(100%);
+}
+img:hover {
+  filter: none;
+}
