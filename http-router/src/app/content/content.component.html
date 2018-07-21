@@ -1,0 +1,48 @@
+<div>
+  <tr>
+    <td>UserID</td>
+    <td>Id</td>
+    <td>Title</td>
+    <td>Body</td>
+    <td>Update</td>
+    <td>Delete</td>
+    <td>Detail</td>
+  </tr>
+  <tr *ngFor="let item of list">
+    <td>{{item.userId}}</td>
+    <td>{{item.id}}</td>
+    <td>{{item.title}}</td>
+    <td>{{item.body}}</td>
+    <td>
+      <button (click)="onUpdate(item)">Update</button>
+    </td>
+    <td>
+      <button (click)="onDelete(item.id)">Delete</button>
+    </td>
+    <td>
+      <button routerLink="details/{{item.id}}">Details</button>
+    </td>
+  </tr>
+</div>
+<div id='fix'>
+  <div class="addPost">
+    <button (click)="addPost()">Add Post</button>
+  </div>
+  <form *ngIf="show">
+    <div>
+      <label>UserId</label>
+      <input type="text" class="form-control" name="id" [(ngModel)]="postObject.userId">
+    </div>
+    <div>
+      <label>Title</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="postObject.title">
+    </div>
+    <div>
+      <label>Body</label>
+      <input type="text" class="form-control" name="body" [(ngModel)]="postObject.body">
+    </div>
+    <button (click)="onAdd()" *ngIf="button == 'add'">add</button>
+    <button (click)="onSubmitUpdate()" *ngIf="button == 'update'">update</button>
+  </form>
+</div>
+
