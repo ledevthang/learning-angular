@@ -19,15 +19,17 @@ export class PostService {
   getList(): Observable<any> {
     return this.a.get(this.apiUrl);
   }
+
   getList2(id): Observable<any> {
     return this.a.get(`${this.apiUrl}/${id}`);
   }
-  addPost(postObject): Observable<any> {
-    return this.a.post<any>(this.apiUrl, postObject, this.httpOptions);
+
+  addPost(data): Observable<any> {
+    return this.a.post<any>(this.apiUrl, data, this.httpOptions);
   }
 
-  updatePost(id, postObject): Observable<any> {
-    return this.a.put<any>(`${this.apiUrl}/${id}`, postObject, this.httpOptions);
+  updatePost(id, data): Observable<any> {
+    return this.a.put<any>(`${this.apiUrl}/${id}`, data, this.httpOptions);
   }
 
   deletePost(id: number): Observable<{}> {

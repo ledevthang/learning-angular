@@ -60,7 +60,6 @@ export class ContentComponent implements OnInit {
   }
 
   onDelete(id: number) {
-    console.log(id);
     this.postService.deletePost(id).subscribe((res: any) => {
       console.log(res);
     });

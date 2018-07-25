@@ -1,0 +1,61 @@
+<p>League of Legend</p>
+<!--</div>-->
+<table class="table table-hover">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Tuong</th>
+    <th scope="col">Tên</th>
+    <th scope="col">Id</th>
+    <th scope="col">Biệt danh</th>
+    <th scope="col">Vị trí</th>
+    <th scope="col">Mô tả</th>
+    <th scope="col">Update</th>
+    <th scope="col">Chi tiet</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor='let item of list'>
+    <td><img src="{{item.icon}}" alt=""></td>
+    <td>{{item.name}}</td>
+    <td>{{item.key}}</td>
+    <td>{{item.title}}</td>
+    <td>
+      {{item.position}}
+      <!--{{item.tags[1]}}-->
+      <!--{{item.tags[2]}}-->
+    </td>
+    <td>{{item.description}}</td>
+    <td>
+      <button class='btn' (click)='onUpdate(item)'>Update</button>
+    </td>
+    <td>
+      <button routerLink='detail'>Chi tiet</button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class='fix'>
+  <button class='btn' (click)='showButton()'>Button</button>
+  <form *ngIf="show">
+    <div>
+      ten<input type="text" name="2" [(ngModel)]="arr.name">
+    </div>
+    <div>
+      ID<input type="text" name="3" [(ngModel)]="arr.key">
+    </div>
+    <div>
+      Biet danh<input type="text" name="4" [(ngModel)]="arr.title">
+    </div>
+    <div>
+      Vi tri<input type="text" name="5" [(ngModel)]="arr.position">
+    </div>
+    <div>
+      Mo ta<input type="text" name="6" [(ngModel)]="arr.description">
+    </div>
+    <!--<div>-->
+      <!--Vi tri<input type="text" name="5" [(ngModel)]="arr.pos">-->
+    <!--</div>-->
+    <button *ngIf="show3" (click)='onAdd2()'>Add new</button>
+    <button *ngIf="show2" (click)='commitUpdate()'>Update</button>
+  </form>
+</div>
